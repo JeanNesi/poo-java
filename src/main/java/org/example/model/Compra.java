@@ -52,7 +52,7 @@ public class Compra extends EntityId implements OperacaoFinanceira{
 
     @Override
     public Double getValorTotalOperacao() {
-        return this.getItens().stream().mapToDouble(ItemCompra::getValorUnitario).sum();
+        return this.getItens().stream().mapToDouble(ItemCompra::getValorCalculado).sum();
     }
 
     @Override

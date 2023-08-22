@@ -58,8 +58,9 @@ public class Application {
         Balanco balanco = new Balanco();
         balanco.setId(352578L);
         balanco.setDataBalanco(LocalDate.now());
-        balanco.setResponsavel("Maria Luiza");
+        balanco.setResponsavel("Jean");
         balanco.addOperacoes(venda);
+        balanco.addOperacoes(venda2);
         balanco.addOperacoes(compra);
         balanco.addOperacoes(locacao);
 

@@ -45,6 +45,12 @@ public class ItemLocacao {
         this.desconto = desconto;
     }
 
+    public Double getValorCalculado(){
+        double valorTotal = this.getValorUnitario() * this.getQuantidade();
+        double descontoCalculado = valorTotal * (this.getDesconto() / 100);
+        return valorTotal - descontoCalculado;
+    }
+
     @Override
     public String toString() {
         return "ItemLocacao{" +

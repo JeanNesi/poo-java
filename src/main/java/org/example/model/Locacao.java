@@ -71,7 +71,7 @@ public class Locacao extends EntityId implements OperacaoFinanceira {
 
     @Override
     public Double getValorTotalOperacao() {
-        return this.getItens().stream().mapToDouble(ItemLocacao::getValorUnitario).sum();
+        return this.getItens().stream().mapToDouble(ItemLocacao::getValorCalculado).sum();
     }
 
     @Override
