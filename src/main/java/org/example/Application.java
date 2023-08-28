@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 public class Application {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MargemLucroException {
         //Declaração de fornecedor
         Fornecedor fornecedor = new Fornecedor();
         fornecedor.setNome("Dell Ltda");
@@ -65,5 +65,34 @@ public class Application {
         balanco.addOperacoes(locacao);
 
         balanco.imprimirBalanco();
+
+        try {
+            cliente.getCpf().toUpperCase();
+        }
+        catch (Exception e){
+            System.out.println("CPF não informado!");
+        }
+
+        Integer calculo;
+        try {
+           calculo = 10/0;
+        } catch (ArithmeticException aex){
+            calculo = 0;
+        }
+        System.out.println(calculo);
+
+        Integer[] array = {10,14,22,33};
+        try {
+            System.out.println(array[3]);
+        }catch (ArrayIndexOutOfBoundsException aiex){
+            System.out.println("Index não existe no array.");
+        }
+
+        Produto produto2 = new Produto();
+        produto2.setPrecoCompra(1200.00);
+        produto2.setPrecoVenda(1300.00);
+
+
+        System.out.println("Sistema encerrado!");
     }
 }

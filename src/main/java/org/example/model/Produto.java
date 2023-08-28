@@ -9,6 +9,8 @@ public class Produto extends ItemVendavel {
     private LocalDate dataPrazo;
     private Status status;
 
+    private Double precoVenda;
+
     public Produto() {
     }
 
@@ -17,6 +19,12 @@ public class Produto extends ItemVendavel {
         super.setDescricao(descricao);
     }
 
+    public void setPrecoVenda(Double precoVenda) throws MargemLucroException {
+        super.setValorUnitario(precoVenda);
+        if(this.calculaMargemDeLucro() < 20){
+           throw new MargemLucroException();
+        }
+    }
 
     public String getNome() {
         return nome;
